@@ -1,0 +1,46 @@
+1. Test that "1" returns "i"
+	> return hardcoded "i"
+
+2. Test that "2" returns "ii"
+	> with an if, return hardcoded "ii"
+
+3. Test that "3" returns "iii"
+	> with an if, return hardcoded "iii"
+	* REFACTOR: convert three ifs into a loop
+	* REFACTOR: make the generated test case, by looping through an array of [input, expected]
+
+4. Test that "4" returns "iv"
+	> before the loop, add hardcoded value to result
+
+5. Test that "5" returns "v"
+	> add hardcoded value again
+
+6. Test that "7" returns "vii"
+	> if the hardcoded value check for 5 was "==" it will need to become ">=", otherwise should pass
+
+7. Test that "9" returns "ix"
+	> add hardcoded value again
+	* could do a refactor now, but since iv, v and ix will never be repeated, wait until x
+
+8. Test that "10" returns "x"
+	> add hardcoded value yet again
+	* REFACTOR: it's safe to change all if's to while's because the largest number is the first test
+	* REFACTOR: all loops are very similar and are parameterized - we can introduce a private function now
+	  NOTE: we don't test private methods in TDD - they are born naturally and don't need testing
+	* REFACTOR: we can do the method call in a loop, if we define a dictionary of numbers/symbols
+	  NOTE: the dictionary keys will need to be explicitly sorted by number because of how Object.keys() works
+	* REFACTOR: we can use Array.reduce() instead of forEach() and return that directly
+
+9. Test 13, 18, 25, 36
+	> no code needed
+
+10. Test 49
+	> add 40 -> "xl" to the romans dictionary
+
+11. Test 50 (l), 90 (xc), 100 (c), 400 (cd), 500 (d), 900 (cm), 1000 (m)
+	> just add the appropriate values into a dictionary
+
+12. Acceptance test: 1999 -> mcmxcix, 2011 -> mmxi
+	> should not need any code
+	* BONUS REFACTOR: generate the romans dictionary - there are three levels that behave the same: ivx, xlc, cdm
+
